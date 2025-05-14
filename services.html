@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Services - Student Resource Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Student Resource Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academic.html">Academic</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="extracurricular.html">Extracurricular</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="student-services">
+            <h2>Student Services</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Counseling</h3>
+                    <p>Mental health and wellness support</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Career Center</h3>
+                    <p>Resume help and job search assistance</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Academic Advising</h3>
+                    <p>Course selection and degree planning</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Student Resource Hub | <a href="contact.html">Contact Us</a></p>
+        </div>
+        <!-- Add below the h2 title -->
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="notes">Notes</button>
+    <button class="filter-btn" data-filter="assignments">Assignments</button>
+    <button class="filter-btn" data-filter="tutoring">Tutoring</button>
+</div>
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search resources...">
+</div>
+
+<!-- Add data-category to your resource cards -->
+<div class="resource-card" data-category="notes">
+    <!-- card content -->
+</div>
+    </footer>
+</body>
+</html>

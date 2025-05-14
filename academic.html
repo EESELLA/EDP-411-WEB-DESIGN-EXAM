@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Quick fixes that will work immediately */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { width: 90%; margin: auto; padding: 20px 0; }
+        header { background: #2c3e50; color: white; padding: 15px 0; }
+        nav ul { list-style: none; padding: 0; text-align: center; }
+        nav li { display: inline-block; margin: 0 10px; }
+        nav a { color: white; text-decoration: none; }
+        .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .resource-card { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 15px 0; margin-top: 30px; }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .resource-grid { grid-template-columns: 1fr; }
+            nav li { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Student Resource Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academic.html" class="active">Academic</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="extracurricular.html">Extracurricular</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Academic Resources</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Course Materials</h3>
+                <p>Lecture notes, slides, and reading materials</p>
+            </div>
+            <div class="resource-card">
+                <h3>Assignment Portal</h3>
+                <p>Submit assignments and track deadlines</p>
+            </div>
+            <div class="resource-card">
+                <h3>Study Groups</h3>
+                <p>Connect with classmates for group study</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Student Resource Hub</p>
+            
+        </div>
+        <!-- Add below the h2 title -->
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="notes">Notes</button>
+    <button class="filter-btn" data-filter="assignments">Assignments</button>
+    <button class="filter-btn" data-filter="tutoring">Tutoring</button>
+</div>
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search resources...">
+</div>
+
+<!-- Add data-category to your resource cards -->
+<div class="resource-card" data-category="notes">
+    <!-- card content -->
+</div>
+    </footer>
+</body>
+</html>

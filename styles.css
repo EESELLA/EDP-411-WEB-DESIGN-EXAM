@@ -1,0 +1,473 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+header h1 {
+    float: left;
+    padding-top: 5px;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    border-bottom: 2px solid #3498db;
+    color: #3498db;
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 0;
+    min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Resource Grid Styles */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.resource-card p {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1, nav {
+        float: none;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Additional Academic Page Specific Styles */
+#academic-resources {
+    padding: 40px 0;
+}
+
+/* Form Styles (for contact page) */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+/* Alert Messages */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { top: -50px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+}
+
+.alert-success {
+    background-color: #2ecc71;
+}
+
+.alert-error {
+    background-color: #e74c3c;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #ecf0f1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #bdc3c7;
+}
+
+.filter-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Search Bar */
+.search-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Form Improvements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background: #2980b9;
+}
+.hero {
+    position: relative;
+    height: 60vh;
+    background-image: url('student-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #F1C40F;
+    color: #2C3E50;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #3498DB;
+    color: white;
+    transform: translateY(-3px);
+  }
+  .sports-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .sport-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .sport-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .sport-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .sport-card h3 {
+    padding: 1rem 1rem 0;
+    color: #2C3E50;
+  }
+  
+  .sport-card p {
+    padding: 0 1rem 1rem;
+    color: #7f8c8d;
+  }
+  .resources-section {
+    padding: 4rem 2rem;
+  }
+  
+  .resource-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .resource-card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .resource-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  .testimonials {
+    background-color: #2C3E50;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .testimonial {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #F1C40F;
+  }
